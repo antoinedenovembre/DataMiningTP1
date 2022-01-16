@@ -130,3 +130,10 @@ dmypy.json
 
 # OSX stuff
 .DS_Store
+
+# idea
+**/.idea
+
+# *ML
+*.xml
+*.iml
