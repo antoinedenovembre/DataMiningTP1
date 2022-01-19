@@ -14,4 +14,4 @@ import seaborn as sns
 import matplotlib as mpl
 
 df_train = pd.read_csv('../Data/weatherAUS.csv', sep=",")
-datapresentation(df_train)
+main_introduction(df_train)
