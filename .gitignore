@@ -132,8 +132,9 @@ dmypy.json
 .DS_Store
 
 # idea
-**/.idea
+
+**/.idea/
+Source/.idea/
 
 # *ML
-*.xml
-*.iml
+**/*.xml
