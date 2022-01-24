@@ -59,3 +59,6 @@ def main_introduction(df_train):
     df_train = data_rebalance(df_train)
     data_presentation(df_train)
     data_correlation(df_train)
+    dataX = df_train.copy().drop(['RainTomorrow'], axis=1)
+    dataY = df_train['RainTomorrow']
+    return dataX, dataY

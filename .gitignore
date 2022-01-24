@@ -134,7 +134,7 @@ dmypy.json
 # idea
 
 **/.idea/
-Source/.idea/
+source/.idea/
 
 # *ML
 **/*.xml
