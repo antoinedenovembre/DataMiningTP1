@@ -1,7 +1,6 @@
 # Import libraries
 """Packages"""
 from introduction.intro import *
-from pca.pca_reduction import *
 
 """ Main """
 import pandas as pd
