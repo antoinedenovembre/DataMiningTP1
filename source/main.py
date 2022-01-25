@@ -1,7 +1,8 @@
 # Import libraries
 """Packages"""
 from introduction.intro import *
-from pca.pca_reduction import *
+from source.Algorithme.Kernel_PCA import Kernel_PCA
+from source.Algorithme.fast_ICA import Fast_ICA
 
 """ Main """
 import pandas as pd
@@ -13,14 +14,16 @@ df_train = pd.read_csv('../data/weatherAUS.csv', sep=",")
 dataX, dataY = main_introduction(df_train)
 
 
-# Xtrain, Ytrain, Xtest, Ytest = train_test_split(dataX, dataY, test_size=0.33, random_state=2018,
-#                                                 stratify=dataY)
-Xtrain, Ytrain, Xtest, Ytest = train_test_split(dataX, dataY)
-
+Xtrain,Xtest, Ytrain, Ytest = train_test_split(dataX, dataY, test_size=0.33, random_state=2018,
+                                                 stratify=dataY)
 print(dataX.shape)
 print(dataY.shape)
 print(Xtrain.shape)
 print(Ytrain.shape)
+n_components = 15
 
-# for i in range(1):
-    # test_number_of_features(Xtrain, Ytrain, i)
+#PCA_func(Xtrain, Ytrain,n_components)
+#Sparse_PCA(Xtrain,Ytrain,n_components)
+#miniBatchDict(Xtrain,Ytrain)
+#Fast_ICA(Xtrain,Ytrain,n_components)
+Kernel_PCA(Xtrain,Ytrain,n_components)
