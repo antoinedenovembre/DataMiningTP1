@@ -1,6 +1,7 @@
 # Import libraries
 """Packages"""
 from introduction.intro import *
+from source.Algorithme.GaussianRandomProjection import Projection_gaussienne_aleatoire
 from source.Algorithme.Kernel_PCA import Kernel_PCA
 from source.Algorithme.fast_ICA import Fast_ICA
 
@@ -26,4 +27,6 @@ n_components = 15
 #Sparse_PCA(Xtrain,Ytrain,n_components)
 #miniBatchDict(Xtrain,Ytrain)
 #Fast_ICA(Xtrain,Ytrain,n_components)
-Kernel_PCA(Xtrain,Ytrain,n_components)
+#Kernel_PCA(Xtrain,Ytrain,n_components
+#Projection_gaussienne_aleatoire(Xtrain,Ytrain,n_components)
+
