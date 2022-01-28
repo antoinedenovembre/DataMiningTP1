@@ -1,15 +1,13 @@
-from sklearn.decomposition import SparsePCA
-
-import numpy as np
 import pandas as pd
 
-from source.anomaly_scores import anomaly_scores
-from source.custom_inverse_transform import custom_inverse_transform
-from source.plot_results import plot_results
-from source.scatterPlot import scatterPlot
+from sklearn.decomposition import SparsePCA
+from source.utils.anomaly_scores import anomaly_scores
+from source.utils.custom_inverse_transform import custom_inverse_transform
+from source.utils.plot_results import plot_results
+from source.utils.scatterPlot import scatterPlot
 
 
-def Sparse_PCA(X_train,y_train,n_components):
+def sparse_pca(X_train,y_train,n_components):
     alpha = 0.0001
     random_state = 2018
     n_jobs = -1

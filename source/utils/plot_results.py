@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 
 from sklearn.metrics import precision_recall_curve, average_precision_score, auc, roc_curve
 
+
 def plot_results(true_labels, anomaly_scores, return_preds=False):
     preds = pd.concat([true_labels, anomaly_scores], axis=1)
     preds.columns = ['trueLabel', 'anomalyScore']

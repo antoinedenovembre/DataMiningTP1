@@ -1,15 +1,12 @@
-
 import pandas as pd
 
-
 from sklearn.decomposition import PCA
+from source.utils.anomaly_scores import anomaly_scores
+from source.utils.plot_results import plot_results
+from source.utils.scatterPlot import scatterPlot
 
-from source.anomaly_scores import anomaly_scores
-from source.plot_results import plot_results
-from source.scatterPlot import scatterPlot
 
-
-def PCA_func(Xtrain, Ytrain, components):
+def pca_func(Xtrain, Ytrain, components):
     train_index = range(0, len(Xtrain))
     print(Xtrain)
     print(Ytrain)
