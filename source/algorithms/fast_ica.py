@@ -24,5 +24,17 @@ def fast_ica(X_train, y_train, n_components):
     X_train_fast_ICA_inverse = pd.DataFrame(data=X_train_fast_ICA_inverse, index=X_train.index)
     scatterPlot(X_train_fast_ICA, y_train, "Independent Component Analysis")
     anomaly_scores_fast_ICA = anomaly_scores(X_train, X_train_fast_ICA_inverse)
-    plot_results(y_train, anomaly_scores_fast_ICA, True)
+    preds = plot_results(y_train, anomaly_scores_fast_ICA, True)
+    cutoff = 350
+    preds_Top = preds[:cutoff]
+    print("Precision: ",
+          np.round(
+              preds_Top.anomalyScore[preds_Top.trueLabel == 1].count() /
+              cutoff, 2))
+    print("Recall: ",
+          np.round(
+              preds_Top.anomalyScore[preds_Top.trueLabel == 1].count() /
+              y_train.sum(), 2))
+    print("NoRainTomorrow days Caught out of 350 Cases with fast ICA", preds_Top.trueLabel.sum())
+
 

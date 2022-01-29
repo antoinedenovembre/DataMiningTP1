@@ -28,9 +28,9 @@ Xtrain, Xtest, Ytrain, Ytest = train_test_split(dataX, dataY, test_size=0.25, ra
                                                 stratify=dataY)
 n_components = 15
 
-pca_func(Xtrain, Ytrain, n_components)
-sparse_pca(Xtrain, Ytrain, n_components)
+#pca_func(Xtrain, Ytrain, n_components)
+#sparse_pca(Xtrain, Ytrain, n_components)
 mini_batch_dict(Xtrain, Ytrain)
-fast_ica(Xtrain, Ytrain, n_components)
-kernel_pca(Xtrain, Ytrain, n_components)
-gaussian_random_projection(Xtrain, Ytrain, n_components)
+#fast_ica(Xtrain, Ytrain, n_components)
+#kernel_pca(Xtrain, Ytrain, n_components)
+#gaussian_random_projection(Xtrain, Ytrain, n_components)

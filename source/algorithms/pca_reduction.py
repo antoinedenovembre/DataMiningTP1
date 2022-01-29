@@ -1,5 +1,5 @@
 import pandas as pd
-
+import numpy as np
 from sklearn.decomposition import PCA
 from source.utils.anomaly_scores import anomaly_scores
 from source.utils.plot_results import plot_results
@@ -24,4 +24,15 @@ def pca_func(Xtrain, Ytrain, components):
     X_train_PCA_inverse = pd.DataFrame(data=X_train_PCA_inverse,
                                        index=Xtrain.index)
     anomaly_scores_PCA = anomaly_scores(Xtrain, X_train_PCA_inverse)
-    plot_results(Ytrain, anomaly_scores_PCA, True)
+    preds = plot_results(Ytrain, anomaly_scores_PCA, True)
+    cutoff = 350
+    preds_Top = preds[:cutoff]
+    print("Precision: ",
+          np.round(
+              preds_Top.anomalyScore[preds_Top.trueLabel == 1].count() /
+              cutoff, 2))
+    print("Recall: ",
+          np.round(
+              preds_Top.anomalyScore[preds_Top.trueLabel == 1].count() /
+              Ytrain.sum(), 2))
+    print("NoRainTomorrow days Caught out of 350 Cases with PCA learning:", preds_Top.trueLabel.sum())

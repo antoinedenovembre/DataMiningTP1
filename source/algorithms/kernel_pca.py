@@ -38,4 +38,4 @@ def kernel_pca(X_data, y_data, n_components):
           np.round(
               preds_Top.anomalyScore[preds_Top.trueLabel == 1].count() /
               y_data.sum(), 2))
-    print("NoRainTomorrow days Caught out of 350 Cases:", preds_Top.trueLabel.sum())
+    print("NoRainTomorrow days Caught out of 350 Cases with kernel PCA:", preds_Top.trueLabel.sum())
