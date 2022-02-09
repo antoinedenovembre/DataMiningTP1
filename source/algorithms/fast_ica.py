@@ -36,5 +36,5 @@ def fast_ica(X_train, y_train, n_components):
               preds_Top.anomalyScore[preds_Top.trueLabel == 1].count() /
               y_train.sum(), 2))
     print("NoRainTomorrow days Caught out of 350 Cases with fast ICA", preds_Top.trueLabel.sum())
-
+    return fast_ICA
 

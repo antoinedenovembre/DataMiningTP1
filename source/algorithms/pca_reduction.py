@@ -36,3 +36,4 @@ def pca_func(Xtrain, Ytrain, components):
               preds_Top.anomalyScore[preds_Top.trueLabel == 1].count() /
               Ytrain.sum(), 2))
     print("NoRainTomorrow days Caught out of 350 Cases with PCA learning:", preds_Top.trueLabel.sum())
+    return pca

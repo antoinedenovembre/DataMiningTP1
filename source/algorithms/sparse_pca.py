@@ -35,3 +35,5 @@ def sparse_pca(X_train,y_train,n_components):
               preds_Top.anomalyScore[preds_Top.trueLabel == 1].count() /
               y_train.sum(), 2))
     print("NoRainTomorrow days Caught out of 350 Cases with Sparse PCA:", preds_Top.trueLabel.sum())
+
+    return sparse_PCA
