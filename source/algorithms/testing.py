@@ -5,7 +5,7 @@ from source.utils.custom_inverse_transform import custom_inverse_transform
 from source.utils.plot_results import plot_results
 from source.utils.scatterPlot import scatterPlot
 
-def Test(Xtest,Ytest,pca):
+def test(Xtest,Ytest,pca):
     X_test_PCA = pca.transform(Xtest)
     X_test_PCA = pd.DataFrame(data=X_test_PCA, index=Xtest.index)
     X_test_PCA_inverse = pca.inverse_transform(X_test_PCA)
@@ -27,7 +27,7 @@ def Test(Xtest,Ytest,pca):
               Ytest.sum(), 2))
     print("NoRainTomorrow days Caught out of 350 Cases with PCA learning:", preds_Top.trueLabel.sum())
 
-def Test_custom_transform(Xtest,Ytest,pca):
+def test_custom_transform(Xtest,Ytest,pca):
     X_test_PCA = pca.transform(Xtest)
     X_test_PCA = pd.DataFrame(data=X_test_PCA, index=Xtest.index)
     X_test_inverse = custom_inverse_transform(Xtest,X_test_PCA,pca)
